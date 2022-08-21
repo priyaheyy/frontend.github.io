@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        display: flex;
+        align-items: 5px;
+        height: 10px;
+        justify-content: center;
+        margin: auto;
+        width: 70%;
+        padding: 10px;
+    }
+
+    .container .login {
+        justify-content: center;
+        align-items: center;
+        /* border-radius: 25px; */
+        border-radius: 15px 15px 15px 15px;
+        border: 2px solid #259942;
+        padding: 20px;
+        width: 300px;
+        height: 500px;
+        color: black
+    }
+
+    .container .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #9cd64b;
+        border: 3px solid green;
+        margin-left: 100px;
+    }
+
+.timer{
+text-align: center;
+font-size: 40px;
+color: blue;
+  
+}
+
+</style>
+
+<body>
+
+    <div class="container">
+        <form>
+            <p id="timer" class="timer"></p>
+            <script>
+
+                var countDown = new Date("Aug 22, 2022 18:37:25").getTime();
+                var x = setInterval(function () {
+
+                    var currentTime = new Date().getTime();
+                    var diff = countDown - currentTime;
+
+                    var hr = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var min = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    var sec = Math.floor((diff % (1000 * 60)) / 1000);
+                  document.getElementById("timer").innerText = hr + "h "
+                        + min + "m " + sec + "s ";
+
+                }, 1000);
+
+            </script>
+
+            <div class="image">
+                <pre><img src="./Capture.PNG" alt="abc">
+            </pre>
+            </div>
+            <div class="login">
+                <input type="text" id="name" name="fname" placeholder="Name" size="35" width="10px"><br><br>
+                <input type="text" id="Phone" name="lname" placeholder="Phone" size="35"><br><br>
+                <input type="text" id="email" name="fname" placeholder="Email Address" size="35"><br><br>
+                <input type="text" id="password" name="fname" placeholder="Password" size="35"><br><br>
+                <input type="text" id="cpassword" name="fname" placeholder="Confirm Password" size="35"><br><br>
+                <input type="text" id="code" name="fname" placeholder="Referral code" size="35"><br><br>
+
+                <input type="checkbox" id="remember">
+                <label for="vehicle2">Remember Me</label>
+                <br><br>
+                <input type="checkbox" id="terms">
+                <label for="vehicle2">I Accept terms and conditions</label><br><br>
+                <input class="btn" type="submit" value="REGISTER">
+                <p>Already have an account? If yes, login <a href="https:/google.com">here</a></p>
+                <p style="text-align: center;">OR</p>
+                <p style="text-align: center;">Connect via</p>
+
+
+                <div>
+                    <pre>
+             <img src="./fb.jpg" alt="abc" width="50" height="50"> <img src="./google.png" alt="abc" width="50" height="50">
+                    </pre>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+</body>
+
+</html>
